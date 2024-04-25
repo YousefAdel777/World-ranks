@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-[100svh] bg-slate-700 bg-[url(/hero-image-wr.jpg)] bg-no-repeat bg-[length:100%_294px] font-Vietnam;
+  }
+  ::-webkit-scrollbar {
+    @apply w-[6px] h-[6px] cursor-default md:h-[10px] md:w-[15px];
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-400;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 hover:bg-gray-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto md:max-w-none lg:px-[15px] lg:w-[970px] xl:w-[1210px];
+  }
+  .select .options {
+    @apply hidden flex-col divide-y-2 divide-slate-400 absolute left-0 w-full top-full max-h-32 overflow-auto border-2 border-slate-400 px-2 py-3 bg-slate-600;
+  }
+  .select .options.open {
+    @apply flex;
+  }
+  .select .options .option {
+    @apply px-2 py-3 text-sm text-slate-300 bg-slate-600 hover:bg-slate-400 cursor-pointer;
+  }
+  .select .options .option.active {
+    @apply bg-gray-200;
+  }
+  .regions-options .region-btn {
+    @apply bg-transparent outline-none px-3 py-2 duration-300 rounded-xl cursor-pointer text-sm font-medium text-slate-300 hover:bg-slate-300 hover:text-white;
+  }
+  .regions-options .region-btn.active {
+    @apply bg-slate-400 text-white;
+  }
+  .checkbox input:checked + img {
+    @apply block;
+  }
+}
